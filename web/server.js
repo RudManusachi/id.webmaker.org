@@ -471,7 +471,7 @@ module.exports = function(options) {
           payload: {
             username: Joi.string().regex(/^[a-zA-Z0-9\-]{1,20}$/).required(),
             email: Joi.string().email().required(),
-            password: Joi.string().regex(/^\S{8,128}$/).required(),
+            password: Joi.string().regex(/^(?=.*\d)(?=.*\S).{8,128}$/).required(),
             feedback: Joi.boolean().required(),
             client_id: Joi.string().required(),
             lang: Joi.string().default('en-US')
